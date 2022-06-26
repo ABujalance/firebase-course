@@ -3,6 +3,7 @@ import { userContext } from "../../utils/user-context";
 import { collection, query, where, onSnapshot } from "firebase/firestore";
 import type { Task } from "./task-types";
 import { useDB } from "../../utils/use-db";
+import { SingleTask } from "./single-task";
 import { CreateTask } from "./create-task";
 
 export const UserTasks: FC = () => {
@@ -27,7 +28,11 @@ export const UserTasks: FC = () => {
       {tasks && tasks.length ? (
         <ul>
           {tasks.map((task) => {
-            return <li key={task.uid}>{task.title}</li>;
+            return (
+              <li key={task.uid}>
+                <SingleTask task={task} />
+              </li>
+            );
           })}
         </ul>
       ) : (
