@@ -1,7 +1,8 @@
 import { FC } from "react";
-import { getApp } from "firebase/app";
+import { Main } from "./components/main/main";
+
 const App: FC = () => {
-  return <div>{JSON.stringify(getApp())}</div>;
+  return <Main />;
 };
 
 export default App;
