@@ -3,6 +3,7 @@ import { userContext } from "../../utils/user-context";
 import { collection, query, where, onSnapshot } from "firebase/firestore";
 import type { Task } from "./task-types";
 import { useDB } from "../../utils/use-db";
+import { CreateTask } from "./create-task";
 
 export const UserTasks: FC = () => {
   const user = useContext(userContext);
@@ -32,6 +33,7 @@ export const UserTasks: FC = () => {
       ) : (
         <p>No tasks available</p>
       )}
+      <CreateTask />
     </div>
   );
 };
